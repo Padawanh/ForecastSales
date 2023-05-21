@@ -1,0 +1,6 @@
+data/*
+models/*
+models/mlruns/*
+notebooks/mlruns/*
+notebooks/.ipynb_checkpoints/*
+.ipynb_checkpoints/*
