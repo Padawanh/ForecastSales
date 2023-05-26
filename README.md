@@ -1,8 +1,6 @@
 # MasterOfDices
 E-Commerce Dataset by Olist
 
-[Um texto que justifique e pontue a contribuição do uso do pacote python do Prophet para a previsão e  MLFlow para gerenciamento do modelos com práticas de MLOps dentro do contexto de um projeto de ciência de dados que faz a previsão de vendas de uma loja de varejo]
-
 Neste post, vou explicar como o uso do pacote python do Prophet e do MLFlow pode melhorar a previsão e o gerenciamento de modelos em um projeto de ciência de dados que faz a previsão de vendas de uma loja de varejo. O Prophet é uma biblioteca desenvolvida pelo Facebook que permite fazer previsões baseadas em séries temporais de forma simples e robusta. O MLFlow é uma plataforma de código aberto que facilita o ciclo de vida dos modelos de aprendizado de máquina, desde o treinamento até a implantação, passando pelo monitoramento e a otimização. Combinando essas duas ferramentas, é possível criar um fluxo de trabalho eficiente e escalável para lidar com os desafios de um projeto de previsão de vendas.
 
 O primeiro passo é importar o pacote do Prophet e criar uma instância do modelo. O Prophet aceita um dataframe com duas colunas: ds (data) e y (valor da série temporal). Neste caso, vamos usar os dados de vendas diárias de uma loja de varejo entre janeiro de 2019 e dezembro de 2020. Em seguida, vamos ajustar o modelo aos dados usando o método fit. O Prophet usa um modelo aditivo que leva em conta as tendências, sazonalidades e feriados que podem afetar as vendas. O modelo também permite adicionar regressores externos, como variáveis climáticas ou promocionais, que podem melhorar a precisão das previsões.
