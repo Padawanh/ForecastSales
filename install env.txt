@@ -1,8 +1,5 @@
-conda create -n Forecast python=3.7
-conda activate Forecast
 pip install pystan
-conda install -c conda-forge prophet
-
+pip install prophet
 pip install mlflow
 pip install jupyterlab
 pip install plotly
