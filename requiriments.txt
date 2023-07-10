@@ -1,0 +1,10 @@
+pystan
+prophet
+mlflow
+jupyterlab
+plotly
+seaborn
+statsmodels
+scikit-learn
+ipywidgets
+virtualenv
