@@ -1,8 +1,28 @@
-pip install /root/ForecastSales/requiriments.txt
+#No terminal CMD
+C:\WINDOWS\System32\wsl.exe --install -d Ubuntu
+
+#No terminal do WLS
+ls /usr/bin/python*
+cd /
+git clone https://github.com/Padawanh/ForecastSales
+
+sudo apt-get update
+sudo apt-get install python3-pip
+
+pip install -r /ForecastSales/requiriments.txt
 
 sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
 cd /
 git clone https://github.com/pyenv/pyenv.git /.pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init --path)"
+exec "$SHELL"
+
+cd /ForecastSales/models
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0
+
+export MLFLOW_TRACKING_URI=http://localhost:5000
+mlflow models serve -m 'models:/SalesModel/Production' -p 5001
