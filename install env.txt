@@ -6,6 +6,10 @@ ls /usr/bin/python*
 cd /
 git clone https://github.com/Padawanh/ForecastSales
 
+git config --global user.name
+git config --global user.email
+
+
 sudo apt-get update
 sudo apt-get install python3-pip
 
@@ -18,11 +22,12 @@ git clone https://github.com/pyenv/pyenv.git /.pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
-#eval "$(pyenv init --path)"
 exec "$SHELL"
+#eval "$(pyenv init --path)"
+
 
 cd /ForecastSales/models
 mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0
 
-export MLFLOW_TRACKING_URI=http://localhost:5000
+export MLFLOW_TRACKING_URI=http://127.0.0.1:5000
 mlflow models serve -m 'models:/SalesModel/Production' -p 5001
