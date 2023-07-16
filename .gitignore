@@ -1,6 +1,8 @@
-models/*
-models/mlruns/*
+models/artifacts/*
 notebooks/mlruns/*
 notebooks/.ipynb_checkpoints/*
 .ipynb_checkpoints/*
 images/*
+images/Components.png
+images/Forecast.png
+models/mlflow.db

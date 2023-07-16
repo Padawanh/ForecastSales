@@ -1,19 +1,16 @@
-{
-    "name": "Forecast",
-    "channels": ["conda-forge"],
-    "dependencies": [
-        "python=3.7", "prophet",
-        {
-            "pip": [
-                "pystan",
-                "mlflow",
-                "jupyterlab",
-                "plotly",
-                "seaborn",
-                "statsmodels",
-                "scikit-learn",
-                "ipywidgets"
-            ],
-        },
-    ],
-}
+{"name": "Forecast",
+                "channels": ["conda-forge"],
+                "dependencies": [ "python=3.7",
+                    {"pip": [
+                            "pystan",
+                            "mlflow",
+                            "plotly",
+                            "seaborn",
+                            "statsmodels",
+                            "scikit-learn",
+                            "ipywidgets",
+                            "prophet"
+                        ],
+                    },
+                ],
+            }

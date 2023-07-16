@@ -6,28 +6,26 @@ ls /usr/bin/python*
 cd /
 git clone https://github.com/Padawanh/ForecastSales
 
-git config --global user.name
-git config --global user.email
+git config --global user.email "seuemail@example.com"
+git config --global user.name "Seu Nome"
 
 
 sudo apt-get update
 sudo apt-get install python3-pip
 
 pip install -r /ForecastSales/requiriments.txt
-
-sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-
-cd /
-git clone https://github.com/pyenv/pyenv.git /.pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$HOME/.pyenv/bin:$PATH"
-exec "$SHELL"
-#eval "$(pyenv init --path)"
-
-
+mkdir /ForecastSales/models     
 cd /ForecastSales/models
 mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0
 
 export MLFLOW_TRACKING_URI=http://127.0.0.1:5000
 mlflow models serve -m 'models:/SalesModel/Production' -p 5001
+
+sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+cd /
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+exec "$SHELL"
