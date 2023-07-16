@@ -6,3 +6,4 @@ images/*
 images/Components.png
 images/Forecast.png
 models/mlflow.db
+.gitignore

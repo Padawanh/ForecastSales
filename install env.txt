@@ -1,7 +1,14 @@
-#No terminal CMD
+###################
+# No terminal CMD #
+###################
+
 C:\WINDOWS\System32\wsl.exe --install -d Ubuntu
 
-#No terminal do WLS
+
+######################
+# No terminal do WLS #
+######################
+
 ls /usr/bin/python*
 cd /
 git clone https://github.com/Padawanh/ForecastSales
@@ -14,14 +21,19 @@ sudo apt-get update
 sudo apt-get install python3-pip
 
 pip install -r /ForecastSales/requiriments.txt
-mkdir /ForecastSales/models     
+
+###########################################################
+# Quando for iniciar a criação dos experimentos e modelos #
+###########################################################
+
 cd /ForecastSales/models
 mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0
 
-export MLFLOW_TRACKING_URI=http://127.0.0.1:5000
-mlflow models serve -m 'models:/SalesModel/Production' -p 5001
-
+#######################################################################################
+# Em outro terminal do WLS execute os comandos abaixo para quando for servir o modelo #
+#######################################################################################
 sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
 cd /
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -29,3 +41,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 exec "$SHELL"
+
+cd /ForecastSales/models
+export MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+mlflow models serve -m 'models:/SalesModel/Production' -p 5001
