@@ -8,4 +8,4 @@ Neste post, meu objetivo é mostrar como servir uma API com o nosso modelo de pr
 _Dito isso, nosso alvo de negócio é;_
 >	**_Montar a previsão de como as vendas se comportarão no próximo mês e servir isso como uma API para que analistas de negócio possam através de BI gerenciar estoque, fazer estimativa de receita e outras analises operacionais de curto prazo._**
 
-Link do post
+[Link do post](https://www.wimyd.com.br/post/s%C3%A9rie-temporal-da-modelagem-a-api-com-prophet-e-mlflow)
